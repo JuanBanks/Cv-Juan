@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#Contenedor{
+    display: grid;
+    grid-template-areas:
+        " header  header"
+        "section  aside";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 100vh;
+    
+
+}
+
+section {
+    grid-area: section;
+
+    height: 90vh;
+    
+    
+}
+aside{
+    grid-area: aside;
+   
+    height: 90vh;
+
+    
+}
+header {
+    grid-area: header;
+    background-color: blue;
+    height: 10vh;
+}
+
+#Contenedor2{
+
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    flex-direction: column;
+    height: 90vh;
+ 
+}
+#Contenedor3{
+
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-direction: column;
+    height: 90vh;
+ 
+}
+
+#imagen{
+
+    border-radius: 50%;
+}
+
+#ajuste{
+    display: flex;
+  
+}
+
+#estilo {
+
+    font-size: 10 rem;
+    font-weight:bolder;
+
+}
