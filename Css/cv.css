@@ -5,14 +5,24 @@
 
 }
 
+/* Animacion breve  falta perfeccionar https://developer.mozilla.org/es/docs/Web/CSS/CSS_animations/Using_CSS_animations */
+.animacion{
+ 
+    animation-duration: 4s;
+    animation-name: texto;
+    animation-timing-function: ease-in-out; /* al chocar con el borde va ajustando */
+    
+}
+
 #Contenedor{
+    background-color: beige;
     display: grid;
     grid-template-areas:
         " header  header"
         "section  aside";
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-column-gap: 8vh;
+    grid-column-gap: 3vh;
     height: 100vh;
     overflow: hidden;
 }
@@ -37,7 +47,7 @@ header {
 
     display: flex;
     justify-content:center;
-    align-items:flex-end;
+    align-items:center;
     flex-direction: column;
     height: 90vh;
  
@@ -49,6 +59,7 @@ header {
     align-items:flex-start;
     flex-direction: column;
     height: 90vh;
+    margin-right: 3vh;
  
 }
 
@@ -56,20 +67,51 @@ header {
 
     border-radius: 50%;
     width: 50vh;
+    animation-duration: 5s;
+    animation-name: imagen;
+    margin-top: 10hv;
+   
 }
 
 #ajuste{
     display: flex;
-    font-size: 1.6rem;
-    
+    font-size: 1.6rem; 
+    text-align: center;
+   
 }
+
 
 #estilo {
 
     font-size: 3rem;
-    font-weight:bolder;
+    font-weight: bolder;
 
+
+/* Fotogramas*/
 }
+@keyframes texto {
+    from {
+      margin-left: 300%;
+      width: 300%;
+    }
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+  @keyframes imagen {
+    from {
+        transform: translateX(700%); /* Fuera de la pantalla */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* Posición final */
+        opacity: 0.3;
+    }
+}
+
 @media( max-width: 1024px){
 
     #Contenedor{
@@ -90,6 +132,7 @@ header {
         justify-content:center;
         align-items:center;
         flex-direction: column;
+        margin: 2vh;
 
      
     }
@@ -107,11 +150,14 @@ header {
     
         border-radius: 50%;
         width: 40vh;
+        
     }
     
     #ajuste{
+
         display: flex;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+  
     }
     
     #estilo {
@@ -120,13 +166,19 @@ header {
         font-weight:bolder;
     
     }
+    @keyframes texto {
+        from {
+          margin-left: -300%;
 
+        }
+
+      }
 }
 
 @media( max-width: 768px){
 
     #Contenedor{
-        background-color: beige;
+        
         display: grid;
         grid-template-areas:
             " header "
@@ -181,8 +233,8 @@ header {
     
     #ajuste{
         display: flex;
-        font-size: 1rem;
-        text-align: center;
+        font-size: 0.99 rem;
+      
        
     }
     
@@ -192,5 +244,10 @@ header {
         font-weight:bolder;
     
     }
-
+    /* Se ajusto */
+    @keyframes texto {
+        from {
+          margin-left: -400%;     
+        } 
+      }
 }
