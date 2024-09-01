@@ -1,0 +1,5 @@
+document.querySelector('.menu-titulo').addEventListener('click', function() {
+    const desplegable = this.nextElementSibling; // Selecciona el siguiente elemento que es el menú desplegable
+    desplegable.style.display = desplegable.style.display === 'block' ? 'none' : 'block';
+  });
+  

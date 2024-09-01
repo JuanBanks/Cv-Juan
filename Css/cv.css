@@ -5,17 +5,82 @@
 
 }
 
+
+
 /* Animacion breve  falta perfeccionar https://developer.mozilla.org/es/docs/Web/CSS/CSS_animations/Using_CSS_animations */
-.animacion{
- 
+.animacion {
+
     animation-duration: 4s;
     animation-name: texto;
-    animation-timing-function: ease-in-out; /* al chocar con el borde va ajustando */
-    
+    animation-timing-function: ease-in-out;
+    /* al chocar con el borde va ajustando */
+
 }
 
-#Contenedor{
-    background-color: beige;
+.ilusion {
+
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif; 
+    color: #000000; 
+    padding: 10px; 
+    background: linear-gradient(135deg ,#ff416c, #ff4b2b); 
+    border-radius: 8px; 
+   
+
+}
+
+.ilusion:hover {
+    
+ box-shadow: 0 10px 25px rgba(250, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+  .menu {
+    display: block;
+    position: relative;
+    cursor: pointer;
+ margin-right: 100vh;
+  }
+  
+  
+  /* Estilos para el menú desplegable */
+  .menu-desplejable {
+    display: none; /* Por defecto, oculto */
+    position: absolute;
+    width: 100%;
+    background: #ffc7c7;
+    color: #000000;
+    padding: 10px 0;
+   
+  }
+  
+  /* Estilos para los elementos dentro del menú desplegable */
+  .menu-desplejable li {
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* Cambia el color de fondo al hacer hover sobre los elementos del menú */
+  .menu-desplejable li:hover {
+    background-color: #ff9a9a;
+  }
+
+
+  #Lista{
+    list-style: none;
+
+  }
+  
+#Contenedor {
+
+    background: linear-gradient( 135deg, #ff7e5f, #feb47b, #ff6f61, #d8a8d2, #a2c2e6 ); 
+    animation: bankefecto 15s ease infinite;
+    background-size: 400% 400%; /* Efecto de cambio de colores, toma el back y cada 15seg cambia de color*/
+    color: aliceblue;
     display: grid;
     grid-template-areas:
         " header  header"
@@ -30,54 +95,65 @@
 section {
     grid-area: section;
     height: 90vh;
-  
+
 }
-aside{
+
+aside {
     grid-area: aside;
     height: 90vh;
- 
+
 }
+
 header {
+
+    display: flex;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    justify-content: flex-end;
+    align-items: center;
     grid-area: header;
-    background-color: blue;
     height: 15vh;
 }
 
-#Contenedor2{
+#Contenedorherard {
+  
+    margin-right: 5vh;
+}
+
+
+#Contenedor2 {
 
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     height: 90vh;
- 
+
 }
-#Contenedor3{
+
+#Contenedor3 {
 
     display: flex;
-    justify-content:center;
-    align-items:flex-start;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
     height: 90vh;
     margin-right: 3vh;
- 
+
 }
 
-#imagen{
+#imagen {
 
     border-radius: 50%;
     width: 50vh;
     animation-duration: 5s;
     animation-name: imagen;
     margin-top: 10hv;
-   
+
 }
 
-#ajuste{
-    display: flex;
-    font-size: 1.6rem; 
+#ajuste { 
+    font-size: 1.6rem;
     text-align: center;
-   
 }
 
 
@@ -87,167 +163,192 @@ header {
     font-weight: bolder;
 
 
-/* Fotogramas*/
+
+   
 }
+ /* Fotogramas*/
 @keyframes texto {
     from {
-      margin-left: 300%;
-      width: 300%;
+        margin-left: 300%;
+        width: 300%;
     }
+
     to {
-      margin-left: 0%;
-      width: 100%;
+        margin-left: 0%;
+        width: 100%;
     }
+}
+
+/* ajuste de como saldra los colores*/
+@keyframes bankefecto {
+    0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
   }
 
-
-  @keyframes imagen {
+@keyframes imagen {
     from {
-        transform: translateX(700%); /* Fuera de la pantalla */
+        transform: translateX(700%);
+        /* Fuera de la pantalla */
         opacity: 0;
     }
+
     to {
-        transform: translateX(0); /* Posición final */
+        transform: translateX(0);
+        /* Posición final */
         opacity: 0.3;
     }
 }
 
-@media( max-width: 1024px){
 
-    #Contenedor{
+@media(max-width: 1024px) {
+
+    .menu {
+        
+     margin-right: 23vh;
+      }
+
+    #Contenedor {
         display: grid;
         grid-template-areas:
             " header "
             "aside"
-            "section "  ;
+            "section ";
         grid-template-columns: 1fr;
-        grid-template-rows: 0vh 30vh;
-        overflow: hidden;
+        grid-template-rows: 8vh 30vh;
+        grid-column-gap: 0vh;
+
+      
     }
-  
-    
-    #Contenedor2{
-  
+
+
+    #Contenedor2 {
+
         display: flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 2vh;
+        height: 65vh;
 
-     
+
     }
-    #Contenedor3{
 
+    #Contenedor3 {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
-   
-     
-    }
-    
-    #imagen{
-    
-        border-radius: 50%;
-        width: 40vh;
-        
-    }
-    
-    #ajuste{
+        height: 70vh;
 
-        display: flex;
+       
+    }
+
+    #imagen {
+
+        width: 40vh;
+    }
+
+    #ajuste {
+
         font-size: 1.3rem;
-  
+
     }
-    
+
     #estilo {
-    
+
         font-size: 3.1rem;
-        font-weight:bolder;
-    
+
+
     }
+
     @keyframes texto {
         from {
-          margin-left: -300%;
+            margin-left: -300%;
 
         }
 
-      }
+    }
 }
 
-@media( max-width: 768px){
+@media(max-width: 768px) {
 
-    #Contenedor{
-        
+    .menu {
+        display: block;
+        position: relative;
+        cursor: pointer;
+     margin-right: 4vh;
+      }
+    .ilusion {
+
+        text-decoration: none;
+        font-size: 0.99rem;
+        font-family: 'Arial', sans-serif;
+        color: #0e1012; 
+    }
+
+    #Contenedor {
+
         display: grid;
         grid-template-areas:
             " header "
             "aside"
-            "section "  ;
-            grid-template-columns: 1fr; 
-            grid-template-rows: 15vh 50vh ; 
-        grid-column-gap: 1vh;
-        height: 100vh;
+            "section ";
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vh 50vh;
+    
+       
     }
-    section {
-      
-        grid-area: section;
-        
-      
-    }
-    aside{
-        grid-area: aside;
-        
-     
-    }
-    header {
-        grid-area: header;
-        background-color: blue;
-        
+
+  
+    #Contenedorherard {
+
+        margin-right: 2.5vh;
     }
     
-    #Contenedor2{
-    
+    #Contenedor2 {
+
         display: flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction: column;
-        height: 0vh;
-     
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+
     }
-    #Contenedor3{
-    
+
+    #Contenedor3 {
+
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         height: 50vh;
-     
+        
+
     }
-    
-    #imagen{
-    
+
+    #imagen {
+
         border-radius: 50%;
         width: 30vh;
-    }
     
-    #ajuste{
-        display: flex;
+    }
+
+    #ajuste {
+
         font-size: 0.99 rem;
-      
-       
     }
-    
+
     #estilo {
-    
+
         font-size: 1.6rem;
-        font-weight:bolder;
-    
+
     }
+
     /* Se ajusto */
     @keyframes texto {
         from {
-          margin-left: -400%;     
-        } 
-      }
+            margin-left: -400%;
+        }
+    }
 }
