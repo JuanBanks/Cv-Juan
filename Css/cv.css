@@ -69,6 +69,11 @@
     background-color: #ff9a9a;
   }
 
+  /* ajustar estilo de a */
+  a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #000000;
+} 
 
   #Lista{
     list-style: none;
