@@ -41,7 +41,6 @@
     display: block;
     position: relative;
     cursor: pointer;
- margin-right: 100vh;
   }
   
   
@@ -113,7 +112,7 @@ header {
 
     display: flex;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     grid-area: header;
     height: 15vh;
@@ -121,7 +120,7 @@ header {
 
 #Contenedorherard {
   
-    margin-right: 5vh;
+    margin: 5vh;
 }
 
 
@@ -210,10 +209,7 @@ header {
 
 @media(max-width: 1024px) {
 
-    .menu {
-        
-     margin-right: 23vh;
-      }
+    
 
     #Contenedor {
         display: grid;
@@ -280,15 +276,16 @@ header {
 @media(max-width: 768px) {
 
     .menu {
-        display: block;
+        display: block; 
         position: relative;
         cursor: pointer;
-     margin-right: 4vh;
+     
       }
+      
     .ilusion {
 
         text-decoration: none;
-        font-size: 0.99rem;
+        font-size: .8rem;
         font-family: 'Arial', sans-serif;
         color: #0e1012; 
     }
@@ -346,10 +343,13 @@ header {
 
     #estilo {
 
-        font-size: 1.6rem;
+        font-size: 1.3rem;
 
     }
-
+    #Contenedorherard {
+  
+        margin: 2vh;
+    }
     /* Se ajusto */
     @keyframes texto {
         from {

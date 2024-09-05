@@ -5,7 +5,13 @@
 
 }
 
+body{
+    background: linear-gradient(135deg, #ff9e80, #ffb74d, #81d4fa, #aed581, #7986cb);
 
+
+    animation: bankefecto 15s ease infinite;
+    background-size: 400% 400%;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -43,7 +49,7 @@
     grid-column: 1 / 3;
     grid-row: 4 / 5;
     font-family: 'Permanent Marker', cursive;
-    font-size: 3rem;
+    font-size: 5rem;
     justify-content: center;
     align-items: center;
 }
@@ -79,6 +85,7 @@
     grid-column: 1 / 3;
     grid-row: 9;
     height: 45vh;
+    overflow: hidden;
 }
 
 .Subrayado {
@@ -181,6 +188,14 @@ section {
     margin-top: 4vh;
 }
 
+@keyframes bankefecto {
+    0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+  }
+
 @media(max-width: 1024px) {
 
     .grid-container {
@@ -209,7 +224,10 @@ section {
         justify-content: center;
 
     }
-
+    .item8 {
+        
+        height: 60vh;
+    }
     section {
         margin-top: -1vh;
     }
@@ -223,7 +241,9 @@ section {
     }
     .overlay-text {
         font-size: 2em;  
+        top: 40%;
     }
+    
     #imagen {
         width: 25vh; 
     }
@@ -298,13 +318,13 @@ section {
     .item8 {
         grid-column: 1 / 3;
         grid-row: 9;
-      
+        height: 100vh;
     }
 
 
     .image-container {
 
-        width: 25vh;
+        width: 30vh;
         height: 250px;
 
     }
@@ -315,9 +335,10 @@ section {
     }
     
     .image-wrapper:hover img {
-        width: 150px;
+        width: 200px;
     }
     .overlay-text {
+        top: 30%;
         font-size: 1.5em;  
     }
 
